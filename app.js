@@ -1,3 +1,7 @@
+//refresh button
+const refresh = document.getElementById('button');
+
+// function that creates the grid and allows the boxes to change when mouse hovers overs
 function createGrid() {
     const main = document.querySelector('#parent');
 
@@ -10,11 +14,21 @@ function createGrid() {
         let newDiv = document.createElement('div');
         main.appendChild(newDiv);
         newDiv.classList.add('element');
-        newDiv.addEventListener('mouseover', function() {
-            this.style.backgroundColor = 'blue';
-
-    });
+        newDiv.addEventListener('mouseover', colorGrid);
 }
+}
+
+function reset() {
+    window.location.reload();
+}
+
+refresh.addEventListener('click', reset);
+
+function colorGrid() {
+    this.style.backgroundColor = 'rgb(' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
+    if(this.style.backgroudColor !== 'transparent') {
+        this.removeEventListener('mouseover', colorGrid);
+    }
 }
 
 createGrid();
