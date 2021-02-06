@@ -1,0 +1,29 @@
+:root {
+    --columns-rows: 2;
+}
+
+#parent {
+    display: grid;
+    grid-template-columns: repeat(var(--columns-rows), 1fr);
+    grid-template-rows: repeat(var(--columns-rows), 1fr);
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    border: 2px solid black;
+}
+
+.element {
+    border: 0.5px solid black;
+}
+
+header {
+    text-align: center;
+}
+
+#reset {
+    margin: auto;
+}
+
+#button {
+    margin: auto;
+}

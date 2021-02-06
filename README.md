@@ -14,3 +14,9 @@ Comments as I work
 - DOM with hover event should probably change the color
 - remember, to create and element you have to .createElement then parent.appendChild(child).
 - cap the promt at 64
+
+
+Things to research
+- CSS :root
+- document.documentElement
+    - .setProperty
