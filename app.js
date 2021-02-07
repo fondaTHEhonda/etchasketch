@@ -7,7 +7,11 @@ const main = document.querySelector('#parent');
 
 // function that creates the grid and allows the boxes to change when mouse hovers overs
 function createGrid() {
+    
+    
     let x = numRows * numRows;
+
+    window.onload
 
     document.documentElement.style.setProperty("--columns-rows", numRows)
 
@@ -21,6 +25,8 @@ function createGrid() {
 
 //Reset funciton
 function reset() {
+    let grid = main.querySelectorAll('div');
+    grid.forEach(main => main.style.backgroundColor = 'transparent')
     numRows = prompt('How many rows would you like?');
 }
 
@@ -37,7 +43,7 @@ const random = document.getElementById('random');
 
 //Grid color
 function colorGrid() {
-    if(this.style.backgroudColor !== 'transparent') {
+    if(this.style.backgroudColor !== 'white') {
         this.removeEventListener('mouseover', colorGrid);
         if(red.checked) {
             this.style.backgroundColor = 'rgb(255,' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
@@ -53,6 +59,6 @@ function colorGrid() {
     }
 }
 
+
 createGrid();
 
-console.log(red.value);
