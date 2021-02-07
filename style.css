@@ -1,3 +1,7 @@
+
+* {
+    margin: 0px;
+}
 :root {
     --columns-rows: 2;
 }
@@ -11,6 +15,7 @@
     margin: auto;
     border: 2px solid black;
     margin-bottom: 25px;
+    background: white;
 }
 
 .element {
@@ -18,7 +23,17 @@
 }
 
 header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
+    background-color: #4692DB;
+    margin-bottom: 30px;
+    height: 100px;
+}
+
+h1 {
+    padding-top: 0px;
 }
 
 #reset {
@@ -31,7 +46,32 @@ form {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 label {
     padding-right: 10px;
+}
+
+body {
+    background: #DB895D;
+}
+
+#form-container {
+    background: #4692DB;
+    height: 50px;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+#button {
+    height: 40px;
+    width: 70px;
+    font-weight: bold;
+    background-color: #36358F;
+    color: white;
 }

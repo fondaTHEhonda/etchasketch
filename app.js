@@ -42,7 +42,7 @@ const random = document.getElementById('random');
 
 //Grid color
 function colorGrid() {
-    if(this.style.backgroudColor !== 'transparent') {
+    if(this.style.backgroudColor !== 'white') {
         this.removeEventListener('mouseover', colorGrid);
         if(red.checked) {
             this.style.backgroundColor = 'rgb(255,' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
