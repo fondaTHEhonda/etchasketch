@@ -1,20 +1,20 @@
 //refresh button
 const refresh = document.getElementById('button');
 
-//rows
-let numRows = 16;
+//Main grid
 const main = document.querySelector('#parent');
 
 // function that creates the grid and allows the boxes to change when mouse hovers overs
 function createGrid() {
-    
-    
+    let numRows = prompt('How many rows would you like?');
     let x = numRows * numRows;
-
-    window.onload
 
     document.documentElement.style.setProperty("--columns-rows", numRows)
 
+    if(numRows > 64 || numRows < 1) {
+        alert("Please type a number between 1 and 64")
+        createGrid();
+    } else {
     for(let i = 0; i < x; i++) {
         let newDiv = document.createElement('div');
         main.appendChild(newDiv);
@@ -22,12 +22,11 @@ function createGrid() {
         newDiv.addEventListener('mouseover', colorGrid);
 }
 }
+}
 
-//Reset funciton
+//Reset function
 function reset() {
-    let grid = main.querySelectorAll('div');
-    grid.forEach(main => main.style.backgroundColor = 'transparent')
-    numRows = prompt('How many rows would you like?');
+    window.location.reload();
 }
 
 refresh.addEventListener('click', reset);
@@ -43,7 +42,7 @@ const random = document.getElementById('random');
 
 //Grid color
 function colorGrid() {
-    if(this.style.backgroudColor !== 'white') {
+    if(this.style.backgroudColor !== 'transparent') {
         this.removeEventListener('mouseover', colorGrid);
         if(red.checked) {
             this.style.backgroundColor = 'rgb(255,' + Math.floor(Math.random() * 255) + ',' + Math.floor(Math.random() * 255) + ')';
